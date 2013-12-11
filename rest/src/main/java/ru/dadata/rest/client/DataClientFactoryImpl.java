@@ -1,8 +1,10 @@
 package ru.dadata.rest.client;
 
-import ru.dadata.rest.EntityFactory;
+import ru.dadata.rest.api.DataClient;
+import ru.dadata.rest.api.DataClientFactory;
+import ru.dadata.rest.api.EntityFactory;
 
-final class DataClientFactoryImpl implements DaDataClientFactory {
+final class DataClientFactoryImpl implements DataClientFactory {
     private final String hostname;
     private final String apiKey;
     private final EntityFactory factory;

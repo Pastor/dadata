@@ -13,7 +13,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.BasicClientConnectionManager;
 import org.apache.http.impl.conn.SchemeRegistryFactory;
 import org.apache.log4j.Logger;
-import ru.dadata.rest.EntityFactory;
+import ru.dadata.rest.api.DataClient;
+import ru.dadata.rest.api.DataRequest;
+import ru.dadata.rest.api.DataResult;
+import ru.dadata.rest.api.EntityFactory;
 
 import java.net.URISyntaxException;
 
@@ -33,10 +36,6 @@ final class DataClientImpl implements DataClient {
         this.factory = factory;
     }
 
-    DataClientImpl(String apiKey, EntityFactory factory) {
-        this("http://dadata.ru", apiKey, factory);
-    }
-
     protected HttpRequestBase createRequest(DataRequest request) throws URISyntaxException {
         URIBuilder builder = new URIBuilder();
         builder.setScheme("http").setHost(hostname).setPath(factory.getQueryPath());
@@ -50,7 +49,7 @@ final class DataClientImpl implements DataClient {
     }
 
     @Override
-    public DaDataResult execute(DataRequest request) {
+    public DataResult execute(DataRequest request) {
         try {
             HttpRequestBase httpRequest = createRequest(request);
             HttpResponse response = client.execute(httpRequest);

@@ -1,4 +1,4 @@
-package ru.dadata.rest;
+package ru.dadata.rest.api;
 
 import java.io.Serializable;
 
@@ -6,9 +6,9 @@ public interface Entity extends Serializable {
 
     public String getSource();
 
-    public QualityCode getGC();
+    public QualityCode getQC();
 
-    public QualityCodeComplete getGCComplete();
+    public QualityCodeComplete getQCComplete();
 
     public QueryFieldType getEntityType();
 }

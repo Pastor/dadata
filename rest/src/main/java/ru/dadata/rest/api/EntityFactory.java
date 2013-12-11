@@ -1,7 +1,6 @@
-package ru.dadata.rest;
+package ru.dadata.rest.api;
 
 import org.apache.http.HttpResponse;
-import ru.dadata.rest.client.DaDataResult;
 
 public interface EntityFactory {
 
@@ -13,5 +12,5 @@ public interface EntityFactory {
 
     public EntityPhone createEntityPhone();
 
-    public DaDataResult createResult(HttpResponse response);
+    public DataResult createResult(HttpResponse response);
 }

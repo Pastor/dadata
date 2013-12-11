@@ -1,4 +1,4 @@
-package ru.dadata.rest;
+package ru.dadata.rest.api;
 
 public interface EntityPhone extends Entity {
 

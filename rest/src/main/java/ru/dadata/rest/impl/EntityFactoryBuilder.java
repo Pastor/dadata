@@ -1,9 +1,12 @@
 package ru.dadata.rest.impl;
 
-import ru.dadata.rest.EntityFactory;
-import ru.dadata.rest.Version;
+import ru.dadata.rest.api.EntityFactory;
+import ru.dadata.rest.api.Version;
 
 public final class EntityFactoryBuilder {
+
+    private EntityFactoryBuilder() {
+    }
 
     public EntityFactory createEntityFactory(Version version) {
         switch (version) {

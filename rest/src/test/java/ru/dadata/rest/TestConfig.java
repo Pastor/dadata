@@ -1,5 +1,7 @@
 package ru.dadata.rest;
 
+import ru.dadata.rest.api.Version;
+
 import java.io.InputStream;
 import java.util.Properties;
 

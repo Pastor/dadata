@@ -1,16 +1,14 @@
-package ru.dadata.rest.v1;
+package ru.dadata.rest.api;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("unused")
-final class DataResponse {
-    @SerializedName("detail")
-    public String detail;
+public final class DataRequest implements Serializable {
     @SerializedName("structure")
     public String[] structure = new String[0];
     @SerializedName("data")
-    public List<EntityImpl1v[]> data = new ArrayList<EntityImpl1v[]>();
+    public List<String[]> data = new ArrayList<String[]>();
 }

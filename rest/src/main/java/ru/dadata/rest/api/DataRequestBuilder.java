@@ -1,6 +1,4 @@
-package ru.dadata.rest;
-
-import ru.dadata.rest.client.DataRequest;
+package ru.dadata.rest.api;
 
 public interface DataRequestBuilder {
 

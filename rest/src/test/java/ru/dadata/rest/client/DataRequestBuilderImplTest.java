@@ -2,8 +2,9 @@ package ru.dadata.rest.client;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.dadata.rest.DataRequestBuilder;
-import ru.dadata.rest.QueryFieldType;
+import ru.dadata.rest.api.DataRequest;
+import ru.dadata.rest.api.DataRequestBuilder;
+import ru.dadata.rest.api.QueryFieldType;
 
 import static junit.framework.Assert.assertEquals;
 

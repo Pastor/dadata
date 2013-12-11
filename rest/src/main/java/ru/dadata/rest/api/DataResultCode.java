@@ -1,8 +1,8 @@
-package ru.dadata.rest.client;
+package ru.dadata.rest.api;
 
 import java.io.Serializable;
 
-public enum ResultCode implements Serializable {
+public enum DataResultCode implements Serializable {
     SUCCESS("Запрос успешно обработан", 200),
     ILLEGAL_REQUEST("Некорректный запрос", 400),
     ILLEGAL_API_KEY("В запросе отсутствует идентификационный ключ (либо указан несуществующий ключ)", 403),
@@ -10,8 +10,8 @@ public enum ResultCode implements Serializable {
     ILLEGAL_DATA_COUNT("Запрос содержит более 50 записей в параметре data", 413),
     INTERNAL_SERVER_ERROR("Произошла внутренняя ошибка сервиса во время обработки", 500);
 
-    public static ResultCode valueOf(int value) {
-        for (ResultCode code : values()) {
+    public static DataResultCode valueOf(int value) {
+        for (DataResultCode code : values()) {
             if (code.code == value) {
                 return code;
             }
@@ -19,7 +19,7 @@ public enum ResultCode implements Serializable {
         throw new IllegalArgumentException("Illegal result code " + value);
     }
 
-    private ResultCode(String desc, int code) {
+    private DataResultCode(String desc, int code) {
         this.desc = desc;
         this.code = code;
     }

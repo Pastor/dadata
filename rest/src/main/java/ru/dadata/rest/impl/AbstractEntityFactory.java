@@ -1,6 +1,6 @@
 package ru.dadata.rest.impl;
 
-import ru.dadata.rest.EntityFactory;
+import ru.dadata.rest.api.EntityFactory;
 
 public abstract class AbstractEntityFactory implements EntityFactory {
     private final String queryPath;

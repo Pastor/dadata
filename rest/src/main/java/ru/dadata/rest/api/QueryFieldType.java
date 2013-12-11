@@ -1,4 +1,4 @@
-package ru.dadata.rest;
+package ru.dadata.rest.api;
 
 import java.io.Serializable;
 

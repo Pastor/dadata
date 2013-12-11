@@ -1,10 +1,10 @@
 package ru.dadata.rest.v1;
 
 import org.apache.http.HttpResponse;
-import ru.dadata.rest.EntityAddress;
-import ru.dadata.rest.EntityName;
-import ru.dadata.rest.EntityPhone;
-import ru.dadata.rest.client.DaDataResult;
+import ru.dadata.rest.api.DataResult;
+import ru.dadata.rest.api.EntityAddress;
+import ru.dadata.rest.api.EntityName;
+import ru.dadata.rest.api.EntityPhone;
 import ru.dadata.rest.impl.AbstractEntityFactory;
 
 public final class EntityFactoryImpl extends AbstractEntityFactory {
@@ -29,7 +29,7 @@ public final class EntityFactoryImpl extends AbstractEntityFactory {
     }
 
     @Override
-    public DaDataResult createResult(HttpResponse response) {
+    public DataResult createResult(HttpResponse response) {
         return new DataResultImpl(response);
     }
 }

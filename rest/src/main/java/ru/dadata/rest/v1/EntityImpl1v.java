@@ -1,8 +1,9 @@
 package ru.dadata.rest.v1;
 
 import com.google.gson.annotations.SerializedName;
-import ru.dadata.rest.*;
+import ru.dadata.rest.api.*;
 
+@SuppressWarnings("unused")
 final class EntityImpl1v implements Entity, EntityAddress, EntityName, EntityPhone {
     @SerializedName("postal_code")
     private String postalCode;
@@ -130,12 +131,12 @@ final class EntityImpl1v implements Entity, EntityAddress, EntityName, EntityPho
     }
 
     @Override
-    public QualityCode getGC() {
+    public QualityCode getQC() {
         return QualityCode.valueOf(qc);
     }
 
     @Override
-    public QualityCodeComplete getGCComplete() {
+    public QualityCodeComplete getQCComplete() {
         return QualityCodeComplete.valueOf(qc_complete);
     }
 

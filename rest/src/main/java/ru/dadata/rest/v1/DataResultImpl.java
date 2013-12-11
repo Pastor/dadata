@@ -6,31 +6,24 @@ import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
-import ru.dadata.rest.Entity;
-import ru.dadata.rest.QueryFieldType;
-import ru.dadata.rest.client.DaDataResult;
-import ru.dadata.rest.client.ResultCode;
+import ru.dadata.rest.api.DataResult;
+import ru.dadata.rest.api.DataResultCode;
+import ru.dadata.rest.api.Entity;
+import ru.dadata.rest.api.QueryFieldType;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-final class DataResultImpl implements DaDataResult {
+final class DataResultImpl implements DataResult {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    private final ResultCode resultCode;
+    private final DataResultCode resultCode;
     private final String result;
     private final String errorDetail;
 
-    DataResultImpl(ResultCode resultCode, String result) {
-        this.resultCode = resultCode;
-        this.result = result;
-        this.errorDetail = parseResult().detail;
-
-    }
-
     DataResultImpl(HttpResponse response) {
-        this.resultCode = ResultCode.valueOf(response.getStatusLine().getStatusCode());
+        this.resultCode = DataResultCode.valueOf(response.getStatusLine().getStatusCode());
         this.result = getResultSource(response.getEntity());
         this.errorDetail = parseResult().detail;
 
@@ -68,7 +61,7 @@ final class DataResultImpl implements DaDataResult {
     }
 
     @Override
-    public ResultCode getResultCode() {
+    public DataResultCode getResultCode() {
         return resultCode;
     }
 
