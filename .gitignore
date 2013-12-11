@@ -9,3 +9,4 @@
 .idea
 target
 rest/src/test/resources/dadata.properties
+dadata.properties
