@@ -4,3 +4,8 @@
 *.jar
 *.war
 *.ear
+#
+*.iml
+.idea
+target
+rest/src/test/resources/dadata.properties
